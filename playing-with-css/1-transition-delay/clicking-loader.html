@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beeping Loader</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .beeping-loader {
+            position: relative;
+            width: 300px;
+            height: 300px;
+
+
+        }
+        .beeping-loader > div {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            margin: 3rem;
+            width: 100%;
+            height: 100%;
+            transform: rotate(calc(var(--rotation) * 2));
+            animation: beeping-loader 1s ease infinite alternate;
+            animation-delay: calc(0.2s * var(--order));
+        }
+
+        .beeping-loader > div > span {
+            margin-inline: 120px;
+            width: 30%;
+            height: 35%;
+            border-radius: 2rem;
+            background-color: rgb(199, 199, 199);
+        }
+
+        @keyframes beeping-loader {
+            to {
+                opacity: 0.1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="beeping-loader">
+        <div style="--rotation : 30deg;; --order: 1;"><span></span></div>
+        <div style="--rotation : 60deg; --order: 3;" ><span></span></div>
+        <div style="--rotation : 90deg; --order: 6;" ><span></span></div>
+        <div style="--rotation : 120deg; --order: 9;" ><span></span></div>
+        <div style="--rotation : 150deg; --order: 12;" ><span></span></div>
+        <div style="--rotation : 180deg; --order: 15;" ><span></span></div>
+        <div style="--rotation : 210deg; --order: 18;" ><span></span></div>
+        <div style="--rotation : 240deg; --order: 21;" ><span></span></div>
+        <div style="--rotation : 270deg; --order: 24;" ><span></span></div>
+        <div style="--rotation : 300deg; --order: 27" ><span></span></div>
+    </div>
+</body>
+</html>
